@@ -122,7 +122,6 @@ C:\Users\Piotr\documents\visual studio 2015\Projects\CSharpTeacher\CSharpTeacher
 C:\Users\Piotr\documents\visual studio 2015\Projects\CSharpTeacher\CSharpTeacher\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\Piotr\documents\visual studio 2015\Projects\CSharpTeacher\CSharpTeacher\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\Piotr\documents\visual studio 2015\Projects\CSharpTeacher\CSharpTeacher\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\Piotr\documents\visual studio 2015\Projects\CSharpTeacher\CSharpTeacher\obj\Debug\CSharpTeacher.csprojResolveAssemblyReference.cache
 C:\Users\Piotr\documents\visual studio 2015\Projects\CSharpTeacher\CSharpTeacher\obj\Debug\CSharpTeacher.dll
 C:\Users\Piotr\documents\visual studio 2015\Projects\CSharpTeacher\CSharpTeacher\obj\Debug\CSharpTeacher.pdb
 C:\Users\Piotr\Documents\Visual Studio 2015\Projects\CSharpTeacher\CSharpTeacher\bin\roslyn\csc.exe.config
@@ -146,3 +145,4 @@ C:\Users\Piotr\Documents\Visual Studio 2015\Projects\CSharpTeacher\CSharpTeacher
 C:\Users\Piotr\Documents\Visual Studio 2015\Projects\CSharpTeacher\CSharpTeacher\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\Piotr\Documents\Visual Studio 2015\Projects\CSharpTeacher\CSharpTeacher\bin\System.Collections.Immutable.xml
 C:\Users\Piotr\Documents\Visual Studio 2015\Projects\CSharpTeacher\CSharpTeacher\bin\System.Reflection.Metadata.xml
+C:\Users\Piotr\documents\visual studio 2015\Projects\CSharpTeacher\CSharpTeacher\obj\Debug\CSharpTeacher.csprojResolveAssemblyReference.cache

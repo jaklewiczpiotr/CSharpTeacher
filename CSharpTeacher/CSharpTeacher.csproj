@@ -336,6 +336,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Exercise1ViewModel.cs" />
     <Compile Include="Models\GlobalsViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -405,6 +406,9 @@
     <Content Include="Views\Interpret\Index.cshtml" />
     <Content Include="Views\Theory\Index.cshtml" />
     <Content Include="Views\SimpleExercises\Index.cshtml" />
+    <Content Include="Views\SimpleExercises\Exercise1.cshtml" />
+    <Content Include="Views\SimpleExercises\Exercise2.cshtml" />
+    <Content Include="Views\SimpleExercises\Exercise3.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
