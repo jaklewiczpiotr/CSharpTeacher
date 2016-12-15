@@ -47,7 +47,7 @@ namespace CSharpTeacher.Controllers
         [HttpGet]
         public ActionResult Exercise2(Exercise1ViewModel model, int? a)
         {
-            model.expression = "string metoda(****** napis) { ****** napis; } metoda(\"hehe\")";
+            model.expression = "int metoda(int a, *** b) { ****** a + b; } metoda(10,40)";
             return View(model);
         }
 
