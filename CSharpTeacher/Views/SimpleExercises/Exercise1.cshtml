@@ -34,13 +34,12 @@
                     Wynik:  @Model.result
                     @Model.sysAnswer
                 </div>
+
+                @if (Model.isExerciseDone == true)
+                {
+                    <a href="@Url.Action("Exercise2", "SimpleExercises")" class="btn btn-block btn-primary">Następne zadanie !</a>
+                }
             </div>
         </div>
-    }
-</div>
-<div class="row">
-    @if (Model.isExerciseDone == true)
-    {
-        @Html.ActionLink("Zad2", "Exercise2", "SimpleExercises")
     }
 </div>

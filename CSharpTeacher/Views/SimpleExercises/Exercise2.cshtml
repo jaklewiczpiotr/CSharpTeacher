@@ -1,5 +1,4 @@
-﻿
-@model CSharpTeacher.Models.Exercise1ViewModel
+﻿@model CSharpTeacher.Models.Exercise1ViewModel
 
 @using System.Linq;
 @using System.Web;
@@ -11,31 +10,34 @@
 <h2>@ViewBag.Title</h2>
 <h3>@ViewBag.Message</h3>
 <div class="container">
-    <div class="row">
-        @using (Html.BeginForm())
-        {
-            <div class="col-xs-6">
-                <div class="row">
-                    <div class="col-xs-12 col-sm-6 col-sm-offset-4">
+    @using (Html.BeginForm())
+    {
+        <div class="row">
+            <div class="col-xs-12 col-sm-5">
+                <div class="jumbotron" style="min-height: 520px;">
+                    <h4>
                         zad1 - uzupełnij metodę, która w parametrze przyjmuje 2 zmienne o typie int, a następnie zwraca ich sumę. W miejsca **** wpisz brakujące słowa kluczowe
-                    </div>
+                    </h4>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+                <div>
+                    @Html.TextAreaFor(x => x.expression, new { @style = "min-width: 100%; height: 465px; background-color: #cccccc;" })
                 </div>
                 <br />
-                <div class="row">
-                    <div class="col-xs-6 col-sm-6 col-sm-offset-4">
-                        @Html.TextAreaFor(x => x.expression, new { @style = "width: 1000px; height: 250px" })
-                        <br />
-                        <br />
-                        <button type="submit" class="btn btn-default">submit</button>
-                    </div>
+                <div>
+                    <button type="submit" class="btn btn-block" style="color: white; background-color: #007E33;">Gotowe !</button>
                 </div>
             </div>
-            <div class="col-xs-6">
-                <h1>Wynik: @Model.result</h1>
-                @Model.sysAnswer
+            <div class="col-xs-12 col-sm-3">
+                <div class="jumbotron">
+                    Wynik:  @Model.result
+                    @Model.sysAnswer
+                </div>
             </div>
-        }
-    </div>
+        </div>
+    }
+</div>
 
     <div class="row">
         @if (Model.isExerciseDone == true)
@@ -43,5 +45,3 @@
             @Html.ActionLink("Zad3", "Exercise3", "SimpleExercises")
         }
     </div>
-        
-</div>

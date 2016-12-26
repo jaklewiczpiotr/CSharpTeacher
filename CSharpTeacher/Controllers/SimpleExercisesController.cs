@@ -22,9 +22,9 @@ namespace CSharpTeacher.Controllers
         public ActionResult Exercise1(Exercise1ViewModel model, int? a)
         {
             model.expression = "string metoda(****** napis) { ****** napis; } metoda(\"hehe\")";
+            //model.expression = "using System;                                                    namespace ConsoleApplication {                                    class Program {                                                     string metoda(****** napis;) { ****** napis; }           static void Main(string[] args){                                                          metoda(\"hehe\") } } }";
             return View(model);
         }
-
 
         [HttpPost]
         public ActionResult Exercise1(Exercise1ViewModel model)
@@ -32,6 +32,9 @@ namespace CSharpTeacher.Controllers
             CsharpResult(model);
 
             //Do osobnej metody
+
+            //model.result.ToString().Replace("using System;                                                    namespace ConsoleApplication {                                    class Program {                                                     ", "").Replace("           static void Main(string[] args){                                                          ", "").Replace(" } } }", "");
+            
             if (string.Equals(model.result, "hehe"))
             {
                 model.sysAnswer = "Gratulacje !";
@@ -54,6 +57,13 @@ namespace CSharpTeacher.Controllers
         [HttpPost]
         public ActionResult Exercise2(Exercise1ViewModel model)
         {
+            if (model.expression.EndsWith(";"))
+            {
+                string exp = model.expression.Remove(model.expression.Length - 1);
+                model.expression = exp;
+                //dalsze rozw if endswith ) zle
+            }
+
             CsharpResult(model);
 
             //Do osobnej metody
@@ -74,6 +84,11 @@ namespace CSharpTeacher.Controllers
             model.result = await CSharpScript.EvaluateAsync(model.expression);
         }
 
+        //private void CsharpResult(Exercise1ViewModel model)
+        //{
+        //     model.result = CSharpScript.EvaluateAsync("public class ScriptedClass { public string HelloWorld {get; set;} public ScriptedClass(){ HelloWorld = \"Hello ros\"; }} new ScriptedClass().HelloWorld").Result;
+        //    // CSharpScript.RunAsync("new ScriptedClass().HelloWorld");
+        //}
 
     }
 }
