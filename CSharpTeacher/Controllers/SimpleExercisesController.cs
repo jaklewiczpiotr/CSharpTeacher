@@ -8,6 +8,7 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Scripting;
 using System.Threading.Tasks;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace CSharpTeacher.Controllers
 {
@@ -18,23 +19,32 @@ namespace CSharpTeacher.Controllers
         {
             return View();
         }
+
         [HttpGet]
         public ActionResult Exercise1(Exercise1ViewModel model, int? a)
         {
-            model.expression = "string metoda(****** napis) { ****** napis; } metoda(\"hehe\")";
-            //model.expression = "using System;                                                    namespace ConsoleApplication {                                    class Program {                                                     string metoda(****** napis;) { ****** napis; }           static void Main(string[] args){                                                          metoda(\"hehe\") } } }";
+            model.expression = "public class YourName { public string Name {get; set;} public YourName() { Name = \" \"; } } static void Main(string[] args) { new YourName().Name }";
             return View(model);
         }
 
-        [HttpPost]
+    [HttpPost]
         public ActionResult Exercise1(Exercise1ViewModel model)
         {
+
+            string exp1 = model.expression.Replace("static void Main(string[] args){", " ").Replace("static void Main(string[] args) {", " ");
+            exp1 = exp1.TrimEnd('}');
+            model.expression = exp1;
+            if (model.expression.EndsWith(";"))
+            {
+                string exp = model.expression.Remove(model.expression.Length - 1);
+                model.expression = exp;
+                //dalsze rozw if endswith ) zle
+            }
+
             CsharpResult(model);
 
             //Do osobnej metody
 
-            //model.result.ToString().Replace("using System;                                                    namespace ConsoleApplication {                                    class Program {                                                     ", "").Replace("           static void Main(string[] args){                                                          ", "").Replace(" } } }", "");
-            
             if (string.Equals(model.result, "hehe"))
             {
                 model.sysAnswer = "Gratulacje !";
@@ -81,14 +91,7 @@ namespace CSharpTeacher.Controllers
 
         private async Task CsharpResult(Exercise1ViewModel model)
         {
-            model.result = await CSharpScript.EvaluateAsync(model.expression);
+            model.result = CSharpScript.EvaluateAsync(model.expression).Result;
         }
-
-        //private void CsharpResult(Exercise1ViewModel model)
-        //{
-        //     model.result = CSharpScript.EvaluateAsync("public class ScriptedClass { public string HelloWorld {get; set;} public ScriptedClass(){ HelloWorld = \"Hello ros\"; }} new ScriptedClass().HelloWorld").Result;
-        //    // CSharpScript.RunAsync("new ScriptedClass().HelloWorld");
-        //}
-
     }
 }
