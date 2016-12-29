@@ -11,6 +11,12 @@ namespace CSharpTeacher
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/jquery.colorfy").Include(
+                        "~/Scripts/jquery.colorfy.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/jquery.colorfy.markdown").Include(
+                        "~/Scripts/jquery.colorfy.markdown.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
 
@@ -26,6 +32,8 @@ namespace CSharpTeacher
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+
         }
     }
 }

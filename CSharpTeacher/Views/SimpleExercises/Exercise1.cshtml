@@ -9,6 +9,76 @@
 
 <h2>@ViewBag.Title</h2>
 <h3>@ViewBag.Message</h3>
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/jquery.colorfy")
+@Scripts.Render("~/bundles/jquery.colorfy.markdown")
+
+    <style type='text/css'>
+        .area {
+            min-width: 100%;
+            max-width: 100%;
+            height: 465px; 
+            background-color: #cccccc;
+            /*float: auto;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 8px;
+            width: 600px;
+            max-width: 600px;
+            height: 400px;
+            border-color: black;
+            border-width: 2px;
+            border-style: solid;
+            font-size: 15px;
+            text-align: left;
+            outline: none;*/
+        }
+
+        .money .currency {
+            color: red;
+        }
+
+        .money .number {
+            color: green;
+        }
+
+        .markdown .title {
+            color: red;
+        }
+
+        .markdown .block {
+            color: green;
+        }
+
+        .markdown .strong {
+            color: blue;
+        }
+
+        .markdown .emphasis {
+            color: red;
+        }
+
+        .markdown .strikethrough {
+            color: lime;
+        }
+
+        .markdown .inlinecode {
+            color: purple;
+        }
+
+        .markdown .codeblock {
+            color: #CC0066;
+        }
+
+        .markdown .orderedlist {
+            color: maroon;
+        }
+
+        .markdown .unorderedlist {
+            color: silver;
+        }
+    </style>
+
 <div class="container">
     @using (Html.BeginForm())
     {
@@ -27,7 +97,7 @@
             </div>
                 <div class="col-xs-12 col-sm-4">
                     <div>
-                        @Html.TextAreaFor(x => x.expression, new { @style = "min-width: 100%; height: 465px; background-color: #cccccc;" })
+                       @Html.TextAreaFor(x => x.expression, new { /*@class = "area", @id = "area",*/ @style = "min-width: 100%; maxwidth: 100 %; height: 465px; background - color: #cccccc;" })
                     </div>
                     <br />
                     <div>
@@ -48,3 +118,7 @@
         </div>
     }
 </div>
+
+<script type="text/javascript">
+     $('#area').colorfy("markdown");
+</script>
