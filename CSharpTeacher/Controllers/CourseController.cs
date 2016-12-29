@@ -12,7 +12,7 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace CSharpTeacher.Controllers
 {
-    public class SimpleExercisesController : Controller
+    public class CourseController : Controller
     {
         // GET: SimpleExercises
         public ActionResult Index()
