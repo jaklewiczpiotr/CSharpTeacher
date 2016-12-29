@@ -14,7 +14,7 @@ namespace CSharpTeacher.Controllers
 {
     public class CourseController : Controller
     {
-        // GET: SimpleExercises
+        // GET: Course
         public ActionResult Index()
         {
             return View();
@@ -27,7 +27,7 @@ namespace CSharpTeacher.Controllers
             return View(model);
         }
 
-    [HttpPost]
+        [HttpPost]
         public ActionResult Exercise1(Exercise1ViewModel model)
         {
 

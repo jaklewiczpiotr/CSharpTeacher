@@ -24,23 +24,11 @@ namespace CSharpTeacher.Controllers
 
             return View();
         }
-
-        private void CsharpResult(GlobalsViewModel model)
-        {
-            model.result = CSharpScript.EvaluateAsync(model.expression).Result;
-        }
-
-        [HttpPost]
-        public ActionResult Contact(GlobalsViewModel model)
-        {
-            CsharpResult(model);
-            return View(model);
-        }
         [HttpGet]
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
-            return View(new GlobalsViewModel());
+            return View();
         }
     }
 }

@@ -328,16 +328,14 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\InterpretController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\SimpleExercisesController.cs" />
+    <Compile Include="Controllers\CourseController.cs" />
     <Compile Include="Controllers\TheoryController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Exercise1ViewModel.cs" />
-    <Compile Include="Models\GlobalsViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -405,10 +403,10 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Interpret\Index.cshtml" />
     <Content Include="Views\Theory\Index.cshtml" />
-    <Content Include="Views\SimpleExercises\Index.cshtml" />
-    <Content Include="Views\SimpleExercises\Exercise1.cshtml" />
-    <Content Include="Views\SimpleExercises\Exercise2.cshtml" />
-    <Content Include="Views\SimpleExercises\Exercise3.cshtml" />
+    <Content Include="Views\Course\Index.cshtml" />
+    <Content Include="Views\Course\Exercise1.cshtml" />
+    <Content Include="Views\Course\Exercise2.cshtml" />
+    <Content Include="Views\Course\Exercise3.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
