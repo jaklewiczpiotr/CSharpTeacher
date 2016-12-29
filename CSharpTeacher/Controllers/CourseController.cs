@@ -23,35 +23,45 @@ namespace CSharpTeacher.Controllers
         [HttpGet]
         public ActionResult Exercise1(Exercise1ViewModel model, int? a)
         {
-            model.expression = "public class YourName { public string Name {get; set;} public YourName() { Name = \" \"; } } static void Main(string[] args) { new YourName().Name }";
+            //model.expression = "public class YourName { public string Name {get; set;} public YourName() { Name = \" \"; } } static void Main(string[] args) { new YourName().Name }";
+            model.expression = "public class YourName {public string name;}\nstatic void Main(string[] args){\n\nYourName yourName = new YourName();\nyourName.name = \" \";\n\nstring returnName(YourName name)\n{\nreturn name.name;\n}\nreturnName(yourName)\n}";
             return View(model);
         }
 
-        [HttpPost]
-        public ActionResult Exercise1(Exercise1ViewModel model)
+        private bool isString(object obj)
         {
+            return obj is string;
+        }
 
+        private void prepareExercise(Exercise1ViewModel model)
+        {
             string exp1 = model.expression.Replace("static void Main(string[] args){", " ").Replace("static void Main(string[] args) {", " ");
             exp1 = exp1.TrimEnd('}');
             model.expression = exp1;
-            if (model.expression.EndsWith(";"))
+            if (model.expression.EndsWith(";")) //poprawić, bo jeśli sie konczy spacja lub /n to nie dziala
             {
                 string exp = model.expression.Remove(model.expression.Length - 1);
                 model.expression = exp;
                 //dalsze rozw if endswith ) zle
             }
+        }
 
+        [HttpPost]
+        public ActionResult Exercise1(Exercise1ViewModel model)
+        {
+            prepareExercise(model);
             CsharpResult(model);
 
             //Do osobnej metody
 
-            if (string.Equals(model.result, "hehe"))
+
+            if (isString(model.result) && !string.IsNullOrWhiteSpace((string)model.result))
             {
                 model.sysAnswer = "Gratulacje !";
                 model.isExerciseDone = true;
             }
 
-            else if (!string.Equals(model.result, "hehe")) { model.sysAnswer = "Źle !"; }
+            //else { model.sysAnswer = "Źle !"; }
             //
 
             return View(model);
@@ -60,19 +70,14 @@ namespace CSharpTeacher.Controllers
         [HttpGet]
         public ActionResult Exercise2(Exercise1ViewModel model, int? a)
         {
-            model.expression = "int metoda(int a, *** b) { ****** a + b; } metoda(10,40)";
+            model.expression = "public class PlayWithVariables {public string name;\npublic int age;\npublic bool isMarried;}\nstatic void Main(string[] args){\n\nPlayWithVariables yourData = new PlayWithVariables();\nyourData.name = \" \";\nyourData.age = \" \";\nyourData.isMarried = \" \";\n\nobject returnData(PlayWithVariables variables)\n{\nreturn variables.name + \" \" + variables.age + \" \" + variables.isMarried;\n}\nreturnData(yourData)\n}";
             return View(model);
         }
 
         [HttpPost]
         public ActionResult Exercise2(Exercise1ViewModel model)
         {
-            if (model.expression.EndsWith(";"))
-            {
-                string exp = model.expression.Remove(model.expression.Length - 1);
-                model.expression = exp;
-                //dalsze rozw if endswith ) zle
-            }
+            prepareExercise(model);
 
             CsharpResult(model);
 
@@ -92,6 +97,11 @@ namespace CSharpTeacher.Controllers
         private async Task CsharpResult(Exercise1ViewModel model)
         {
             model.result = CSharpScript.EvaluateAsync(model.expression).Result;
+        }
+
+        private async Task CsharpResultV2(Exercise1ViewModel model)
+        {
+            model.result = CSharpScript.EvaluateAsync(model.expression);
         }
     }
 }

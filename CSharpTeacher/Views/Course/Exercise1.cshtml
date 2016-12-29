@@ -91,13 +91,15 @@
                         Zaczniemy od nauki podstaw <i>typów danych, arytmetyki</i> oraz <i>operatorów</i>. Nauczymy się kilku koncepcji które ułatwią ci wkroczenie w świat programowania. Pod koniec kursu będziesz zaznajomiony z tworzeniem prostych bloków kodu w C#.
                         <br /><br />
                         Instrukcje:<br /><br />
-                        
+                        Wpisz swoje imię w odpowiednim miejscu, w metodzie main np. yourName.name = "Piotr".
+                        A następnie przyciśnij przycisk "Gotowe !" <br /><br />
+                        <span style="color: crimson;">PS: Nie przejmuj się jeżeli nie rozumiesz kodu po prawej stronie, za niedługo wszystko stanie się jasne !</span>
                     </h4>
                 </div>
             </div>
                 <div class="col-xs-12 col-sm-4">
                     <div>
-                       @Html.TextAreaFor(x => x.expression, new { /*@class = "area", @id = "area",*/ @style = "min-width: 100%; maxwidth: 100 %; height: 465px; background - color: #cccccc;" })
+                       @Html.TextAreaFor(x => x.expression, new { /*@class = "area", @id = "area",*/ @style = "min-width: 100%; maxwidth: 100 %; height: 465px; background-color: #cccccc;" })
                     </div>
                     <br />
                     <div>
@@ -112,7 +114,7 @@
 
                 @if (Model.isExerciseDone == true)
                 {
-                    <a href="@Url.Action("Exercise2", "SimpleExercises")" class="btn btn-block btn-primary">Następne zadanie !</a>
+                    <a href="@Url.Action("Exercise2", "Course")" class="btn btn-block btn-primary">Następne zadanie !</a>
                 }
             </div>
         </div>
