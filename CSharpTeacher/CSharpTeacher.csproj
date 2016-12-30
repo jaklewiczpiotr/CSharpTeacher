@@ -407,6 +407,7 @@
     <Content Include="Views\Course\Exercise1.cshtml" />
     <Content Include="Views\Course\Exercise2.cshtml" />
     <Content Include="Views\Course\Exercise3.cshtml" />
+    <Content Include="Views\Theory\Theory1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

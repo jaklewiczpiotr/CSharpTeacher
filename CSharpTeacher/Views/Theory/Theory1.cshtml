@@ -1,0 +1,31 @@
+﻿@using System.Linq;
+@using System.Web;
+@using System.Web.Mvc;
+@using System.Web.Mvc.Html;
+@using System.Threading.Tasks;
+
+<h2>@ViewBag.Title</h2>
+<h3>@ViewBag.Message</h3>
+<div class="container">
+    @using (Html.BeginForm())
+    {
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="jumbotron" style="min-height: 520px;">
+                    <h2>Pora na trochę wyjaśnień</h2>
+                    <h4 style="text-align: justify;">
+                        Żeby przejść do następnych zadań musisz zrozumieć chociaż trochę teorii.<br />
+                        <br /><strong>public class Osoba { public string imie; public int wiek; public string mowienie() { return "blabla"; } }</strong> - w ten sposób deklarujemy klasę.
+                        <u>Klasa</u> jest to ogólny szablon zawierający pewne cechy (np. każda osoba posiada imię, wiek oraz potrafi mówić), na jego podstawie możemy tworzyć <u>obiekty</u> <strong>Osoba Adam = new Osoba();</strong> - czyli twory reprezentujące konkretne osoby.
+                        Po utworzeniu obiektu możemy do jego zmiennych przypisać konkretne wartości: <strong>Adam.wiek = 25;</strong>. <u>Metoda</u> - jest to blok kodu, który zawiera pewne instrukcje do wykonania: <strong>public string mowienie() { return "blabla"; }</strong>.
+                        <strong>Uwaga!</strong> Metoda Main jest najważniejszą i pierwszą, uruchamianą metodą w programie, wewnątrz niej 
+                    </h4>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<div class="row">
+        @Html.ActionLink("Zad3", "Exercise3", "Course")
+</div>

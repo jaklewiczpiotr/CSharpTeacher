@@ -13,5 +13,10 @@ namespace CSharpTeacher.Controllers
         {
             return View();
         }
+
+        public ActionResult Theory1()
+        {
+            return View();
+        }
     }
 }

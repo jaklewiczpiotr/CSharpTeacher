@@ -35,6 +35,7 @@ namespace CSharpTeacher.Controllers
 
         private void prepareExercise(Exercise1ViewModel model)
         {
+            //można jeszcze dopisać Replace Console.WriteLine
             string exp1 = model.expression.Replace("static void Main(string[] args){", " ").Replace("static void Main(string[] args) {", " ");
             exp1 = exp1.TrimEnd('}');
             model.expression = exp1;
@@ -70,7 +71,7 @@ namespace CSharpTeacher.Controllers
         [HttpGet]
         public ActionResult Exercise2(Exercise1ViewModel model, int? a)
         {
-            model.expression = "public class PlayWithVariables {public string name;\npublic int age;\npublic bool isMarried;}\nstatic void Main(string[] args){\n\nPlayWithVariables yourData = new PlayWithVariables();\nyourData.name = \" \";\nyourData.age = \" \";\nyourData.isMarried = \" \";\n\nobject returnData(PlayWithVariables variables)\n{\nreturn variables.name + \" \" + variables.age + \" \" + variables.isMarried;\n}\nreturnData(yourData)\n}";
+            model.expression = "public class PlayWithVariables {public string name;\npublic int age;\npublic bool isMarried;}\nstatic void Main(string[] args){\n\nPlayWithVariables yourData = new PlayWithVariables();\nyourData.name = \" \";\nyourData.age = ;\nyourData.isMarried = ;\n\nobject returnData(PlayWithVariables variables)\n{\nreturn variables.name + \" \" + variables.age + \" \" + variables.isMarried;\n}\nreturnData(yourData)\n}";
             return View(model);
         }
 
@@ -82,13 +83,40 @@ namespace CSharpTeacher.Controllers
             CsharpResult(model);
 
             //Do osobnej metody
-            if (int.Equals(model.result, 50))
+            if (model.result != null)
             {
                 model.sysAnswer = "Gratulacje !";
                 model.isExerciseDone = true;
             }
 
-            else if (!int.Equals(model.result, 50)) { model.sysAnswer = "Źle !"; }
+            else { model.sysAnswer = "Źle !"; }
+            //
+
+            return View(model);
+        }
+
+        [HttpGet]
+        public ActionResult Exercise3(Exercise1ViewModel model, int? a)
+        {
+            model.expression = "public class PlayWithVariables {public string name;\npublic int age;\npublic bool isMarried;}\nstatic void Main(string[] args){\n\nPlayWithVariables yourData = new PlayWithVariables();\nyourData.name = \" \";\nyourData.age = ;\nyourData.isMarried = ;\n\nobject returnData(PlayWithVariables variables)\n{\nreturn variables.name + \" \" + variables.age + \" \" + variables.isMarried;\n}\nreturnData(yourData)\n}";
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Exercise3(Exercise1ViewModel model)
+        {
+            prepareExercise(model);
+
+            CsharpResult(model);
+
+            //Do osobnej metody
+            if (model.result != null)
+            {
+                model.sysAnswer = "Gratulacje !";
+                model.isExerciseDone = true;
+            }
+
+            else { model.sysAnswer = "Źle !"; }
             //
 
             return View(model);

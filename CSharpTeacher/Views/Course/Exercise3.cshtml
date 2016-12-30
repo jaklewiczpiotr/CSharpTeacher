@@ -1,1 +1,49 @@
-﻿
+﻿@model CSharpTeacher.Models.Exercise1ViewModel
+
+@using System.Linq;
+@using System.Web;
+@using System.Web.Mvc;
+@using System.Web.Mvc.Html;
+@using Microsoft.CodeAnalysis.CSharp.Scripting;
+@using System.Threading.Tasks;
+
+<h2>@ViewBag.Title</h2>
+<h3>@ViewBag.Message</h3>
+<div class="container">
+    @using (Html.BeginForm())
+    {
+        <div class="row">
+            <div class="col-xs-12 col-sm-5">
+                <div class="jumbotron" style="min-height: 520px;">
+                    <h4 style="text-align: justify;">
+                        Gratulacje ! Umiesz już przypisywać dane do zmiennych, teraz czas na trening deklarowania zmiennych.<br /><br />
+                        Instrukcje:<br />
+                        zadeklaruj 3 dowolne zmienne np. (public int wiek;)
+                    </h4>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+                <div>
+                    @Html.TextAreaFor(x => x.expression, new { @style = "min-width: 100%; height: 465px; background-color: #cccccc;" })
+                </div>
+                <br />
+                <div>
+                    <button type="submit" class="btn btn-block" style="color: white; background-color: #007E33;">Gotowe !</button>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-3">
+                <div class="jumbotron">
+                    Wynik:  @Model.result
+                    @Model.sysAnswer
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<div class="row">
+    @if (Model.isExerciseDone == true)
+    {
+        @Html.ActionLink("Zad4", "Exercise3", "Course")
+    }
+</div>
