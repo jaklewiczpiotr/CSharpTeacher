@@ -1,0 +1,18 @@
+﻿        @model CSharpTeacher.Models.Quiz.Quiz1Grade     
+        <h2>Grade</h2>
+
+        Exam Name: @Model.Quiz1.Name
+
+        <br />
+
+        Total Questions: @Model.Quiz1.Questions.Count
+        <br />
+        Your Score: @Model.Score  / @Model.Quiz1.TotalPoints
+        <br />
+
+        @foreach (var question in Model.Quiz1.Questions)
+        {
+
+            Html.Partial("__question", question);
+
+        }

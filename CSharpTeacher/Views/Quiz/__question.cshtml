@@ -1,0 +1,17 @@
+﻿@model CSharpTeacher.Models.Quiz.Quiz1Question   
+ <div class="question">
+
+        @Html.Hidden("Exam.Questions[" + Model.OrderNumber +"].Id",Model.Id)
+
+        @Model.Text  <div class="points"> (@Model.Point) </div> <br />
+
+        @foreach (var choice in Model.Choices)
+        {
+
+        @Html.Partial("__choice",choice); <br />
+
+        }
+
+    </div>
+
+

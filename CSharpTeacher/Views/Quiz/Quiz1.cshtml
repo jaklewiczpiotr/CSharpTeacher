@@ -1,0 +1,21 @@
+﻿@model CSharpTeacher.Models.Quiz.Quiz1
+
+    <h1> @Model.Name </h1>
+   
+    @Html.Hidden("Id", Model.Id )
+    
+    @using (var form = Html.BeginForm(new { Action = "Grade"}))
+    
+    {
+   
+    foreach (var question in Model.Questions)
+    
+    {
+   
+    @Html.Partial("__question", question);
+    
+    }
+    
+    <input type="submit" value="Submit" />
+    
+    }
