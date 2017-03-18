@@ -1,21 +1,29 @@
 ﻿@model CSharpTeacher.Models.Quiz.Quiz1
 
-    <h1> @Model.Name </h1>
+    <h1 style="text-align:center; color: white;"> @Model.Name </h1>
    
     @Html.Hidden("Id", Model.Id )
     
-    @using (var form = Html.BeginForm(new { Action = "Grade"}))
-    
+    @using (var form = Html.BeginForm(new { Action = "Grade" }))
+
     {
-   
-    foreach (var question in Model.Questions)
-    
-    {
-   
-    @Html.Partial("__question", question);
-    
-    }
-    
-    <input type="submit" value="Submit" />
-    
+
+        foreach (var question in Model.Questions)
+
+        {
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <span>
+                        @Html.Partial("__question", question)
+                    </span>
+                </div>
+            </div>
+
+        }
+        <div class="row">
+            <div class="col-xs-12">
+                <input class="btn btn-block btn-lg btn-success" type="submit" value="Zakończ Quiz !" />
+            </div>
+        </div>
     }

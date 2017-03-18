@@ -16,9 +16,11 @@
             <div class="col-xs-12 col-sm-5">
                 <div class="jumbotron" style="min-height: 520px;">
                     <h4 style="text-align: justify;">
-                        Gratulacje ! Umiesz już przypisywać dane do zmiennych, teraz czas na trening deklarowania zmiennych.<br /><br />
-                        Instrukcje:<br />
-                        zadeklaruj 3 dowolne zmienne np. (public int wiek;)
+                       <!-- Gratulacje ! Umiesz już przypisywać dane do zmiennych, teraz czas na trening deklarowania zmiennych.<br /><br /> -->
+                        Zadanie 7:<br /><br /> Trening przed quizem spradzającym wiedzę - powtórzenie wiadomości<br /><br />
+
+                        Instrukcje:<br /><br />
+                        zadeklaruj 3 dowolne zmienne wewnątrz klasy PlayWithVariables np. (public int wiek;), następnie stwórz instancję(obiekt) tej klasy, następnie przypisz wartości do pól stworzonego obiektu oraz ostatecznie uzupełnij ciało metody returnData w taki sposób, aby metoda zwracała wszystkie trzy wartości. 
                     </h4>
                 </div>
             </div>
@@ -36,14 +38,11 @@
                     Wynik:  @Model.result
                     @Model.sysAnswer
                 </div>
+                @if (Model.isExerciseDone == true)
+                {
+                    <a href="@Url.Action("Exercise2", "Course")" class="btn btn-block btn-primary">Rozpocznij Quiz !</a>
+                }
             </div>
         </div>
-    }
-</div>
-
-<div class="row">
-    @if (Model.isExerciseDone == true)
-    {
-        @Html.ActionLink("Zad4", "Exercise3", "Course")
     }
 </div>

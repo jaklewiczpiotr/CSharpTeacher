@@ -15,7 +15,6 @@ C:\Users\Piotr\documents\visual studio 2015\Projects\CSharpTeacher\CSharpTeacher
 C:\Users\Piotr\documents\visual studio 2015\Projects\CSharpTeacher\CSharpTeacher.Tests\bin\Debug\CSharpTeacher.Tests.dll
 C:\Users\Piotr\documents\visual studio 2015\Projects\CSharpTeacher\CSharpTeacher.Tests\bin\Debug\CSharpTeacher.Tests.pdb
 C:\Users\Piotr\documents\visual studio 2015\Projects\CSharpTeacher\CSharpTeacher.Tests\bin\Debug\CSharpTeacher.dll
-C:\Users\Piotr\documents\visual studio 2015\Projects\CSharpTeacher\CSharpTeacher.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
 C:\Users\Piotr\documents\visual studio 2015\Projects\CSharpTeacher\CSharpTeacher.Tests\bin\Debug\Microsoft.Web.Infrastructure.dll
 C:\Users\Piotr\documents\visual studio 2015\Projects\CSharpTeacher\CSharpTeacher.Tests\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Piotr\documents\visual studio 2015\Projects\CSharpTeacher\CSharpTeacher.Tests\bin\Debug\System.Web.Helpers.dll

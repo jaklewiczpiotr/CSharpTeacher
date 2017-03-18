@@ -1,18 +1,30 @@
 ﻿        @model CSharpTeacher.Models.Quiz.Quiz1Grade     
-        <h2>Grade</h2>
 
-        Exam Name: @Model.Quiz1.Name
+        <h2 style="text-align:center; color: white;">@Model.Quiz1.Name</h2>
 
         <br />
 
-        Total Questions: @Model.Quiz1.Questions.Count
+        <h2 style="text-align:center; color: white;">Ilość pytań: @Model.Quiz1.Questions.Count</h2>
         <br />
-        Your Score: @Model.Score  / @Model.Quiz1.TotalPoints
+        <h2 style="text-align:center; color: white;">Gratulacje!<br /> Twój wynik: @Model.Score  / @Model.Quiz1.TotalPoints</h2>
         <br />
+
+<div class="row">
+    <div class="col-xs-12 col-sm-6">
+        <span class="btn btn-block btn-lg btn-success">Powtórz Quiz !</span>
+    </div>
+
+    <div class="visible-xs">
+        <br />
+    </div>
+
+    <div class="col-xs-12 col-sm-6">
+        <span class="btn btn-block btn-lg btn-success">Przejdź do następnych zadań !</span>
+    </div>
+</div>
 
         @foreach (var question in Model.Quiz1.Questions)
         {
-
             Html.Partial("__question", question);
 
         }

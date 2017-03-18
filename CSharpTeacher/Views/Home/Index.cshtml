@@ -2,4 +2,46 @@
     ViewBag.Title = "Home Page";
 }
 
-<h1>WITAJ W C# TEACHER</h1>
+<div class="container">
+    <br />
+    <div class="row">
+        <div class="row">
+            <h1 style="text-align: center; color: white;">Witaj na stronie głównej</h1>
+        </div>
+
+        <br />
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-6">
+                @*<span class="btn btn-block btn-lg btn-success">Rozpocznij kurs C# !<br /></span>*@
+                @Html.ActionLink("Rozpocznij kurs C# !", "Index", "Course", null, new { @class = "btn btn-block btn-lg btn-success" })
+            </div>
+
+            <div class="visible-xs">
+                <br />
+            </div>
+
+            <div class="col-xs-12 col-sm-6">
+                <span class="btn btn-block btn-lg btn-success">Teoria</span>
+                @*@Url.Action("Index", "Course", new { @class = "btn btn-block btn-lg btn-success" })*@
+
+            </div>
+        </div>
+
+        <br />
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-6">
+                <span class="btn btn-block btn-lg btn-success">Kontakt</span>
+            </div>
+
+            <div class="visible-xs">
+                <br />
+            </div>
+
+            <div class="col-xs-12 col-sm-6">
+                <span class="btn btn-block btn-lg btn-success">O nas</span>
+            </div>
+        </div>
+    </div>
+</div>

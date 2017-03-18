@@ -3,7 +3,7 @@
 
         @Html.Hidden("Exam.Questions[" + Model.OrderNumber +"].Id",Model.Id)
 
-        @Model.Text  <div class="points"> (@Model.Point) </div> <br />
+        <h4>@Model.Text</h4>
 
         @foreach (var choice in Model.Choices)
         {

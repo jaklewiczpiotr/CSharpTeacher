@@ -23,7 +23,7 @@
                         <strong>object</strong> - jest to typ podstawowy (w skrócie mówiąc - może być każdym typem z powyższych)
                         <br /><br />
                         Instrukcje:<br />
-                        Uzupełnij swoje imię, wiek, itp.
+                        Uzupełnij swoje imię, wiek oraz czy jesteś sprytny.
                     </h4>
                 </div>
             </div>
@@ -41,6 +41,10 @@
                     Wynik:  @Model.result
                     @Model.sysAnswer
                 </div>
+                @if (Model.isExerciseDone == true)
+                {
+                    <a href="@Url.Action("Exercise3", "Course")" class="btn btn-block btn-primary">Następne zadanie !</a>
+                }
             </div>
         </div>
     }
